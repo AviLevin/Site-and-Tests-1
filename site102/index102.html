@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>site102</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles\Bootstrap v4.2.1.css">
+  <link rel="stylesheet" href="styles\custom1.css">
+  <script src="script\jQuery v3.3.1.js"></script>
+  <script src="script\Bootstrap v4.2.1.js"></script>
+  <script src="script\custom1.js"></script>
+
+  <style>
+    .border1 {
+
+      border-style: outset;
+      border-width: 7px;
+      border-color: solid coral;
+      min-width: 400px;
+      min-height: 400px
+
+    }
+  </style>
+</head>
+
+
+
+<body>
+
+  <div class="container-fluid">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-6 ">
+          <br>
+          <p> site102 - you must check all fields to continue - 2. choose color and age than show display 
+              <br> 3. show button will not appear till all fields chosen </p>
+            
+              <!-- check box  -->
+
+          <div class="form-group">
+            <div class="checkbox">
+              <label><input type="checkbox" value="" id="colorCheck" onclick="showInput()"> choose
+                color</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="" id="ageCheck" onclick="showInput()"> choose age</label>
+            </div>
+
+          </div>
+
+          <!-- bottons -->
+
+          <div class="form-group" id="colorInput" style="display:none">
+            <label for="exampleInputEmail1">choose your color!</label>
+            <input type="color" class="form-control"  placeholder="color" id="colorVal"
+              onchange="showBtn()">
+          </div>
+
+          <div class="form-group" id="ageInput" style="display:none">
+            <label for="exampleInputPassword1">choose your age!</label>
+            <input type="number" class="form-control" name="tentacles" min="10" max="100" id="ageVal"
+              onchange="showBtn()">
+          </div>
+
+          <!-- showGo button -->
+
+          <button id="showGo" type="button" class="btn btn-primary" onclick="output()" style="display:none">show
+            combined</button>
+
+        </div>
+
+        <!-- 
+          display on other side -->
+
+        <div id="colorOutput" class="border1">
+            <div class="p-2 bg-warning" id="ageOutput">
+          <div  class="col-sm-9 col-md-6   ">
+
+            
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</body>
+
+</html>

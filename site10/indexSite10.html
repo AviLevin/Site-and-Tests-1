@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>site10</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles\Bootstrap v4.2.1.css">
+  <link rel="stylesheet" href="styles\custom1.css">
+  <script src="script\jQuery v3.3.1.js"></script>
+  <script src="script\Bootstrap v4.2.1.js"></script>
+  <script src="script\custom1.js"></script>
+
+
+
+
+  <script>
+
+
+// $(function(){
+//     $("form").validate();    
+//     $("form").on('submit', function(e) {
+//         var isvalid = $("form").valid();
+//         if (isvalid) {
+//             e.preventDefault();
+//             alert(getvalues("form"));
+//         }
+//     });
+// });
+
+// function getvalues(f)
+// {
+//     var form=$("#"+f);
+//     var str='';
+//     $("input:not('input:submit')", form).each(function(i){
+//         str+='\n'+$(this).prop('name')+': '+$(this).val();
+//     });
+//     return str;
+// }
+
+  </script>
+
+</head>
+
+
+
+<body>
+
+  <div class="container">
+
+    <form action="" onsubmit="">
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+
+        </div>
+        <input type="text" class="form-control" placeholder="name" aria-label="name" aria-describedby="basic-addon1"
+          required>
+      </div>
+
+
+
+      <br>
+
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+
+        </div>
+        <input type="text" class="form-control" placeholder="age" aria-label="age" aria-describedby="basic-addon1"
+          min="10" max="21" required>
+      </div>
+
+      <br>
+
+      <button type="submit" class="btn btn-primary">send</button>
+
+    </form>
+
+  </div>
+
+</body>
+  
+</html>

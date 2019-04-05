@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>site10</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles\Bootstrap v4.2.1.css">
+    <link rel="stylesheet" href="styles\custom1.css">
+    <script src="script\jQuery v3.3.1.js"></script>
+    <script src="script\Bootstrap v4.2.1.js"></script>
+    <script src="script\custom1.js"></script>
+
+
+
+<script>
+
+$(function() {
+    var $accordions = $(".accordion").accordion({
+        collapsible: true,
+        active: false,
+        icons: false
+    }).on('click', function() {
+        $accordions.not(this).accordion('activate', false);
+    });
+});
+
+
+</script>
+
+    <style>
+        
+        .myform {
+
+            border: 5px;
+            min-width: 30px;
+            min-height: 30px;
+
+        }
+
+
+        .accordion {
+            margin-top: 12px;
+        }
+        
+
+    </style>
+
+
+</head>
+
+
+
+<body>
+
+    <div class="accordion">
+        <h3>All Weeks</h3>
+        <div class="tab1">
+            <form class="myform">
+        
+            </form>
+        </div>
+        <h3>Weeks 1-3</h3>
+        <div class="tab1">
+            <form class="myform">
+
+            </form>
+        </div>
+        <h3>Weeks 4-6</h3>
+        <div class="tab1">
+            <form class="myform">
+
+            </form>
+        </div>
+    </div>
+
+
+
+    <div class="accordion">
+        <h3>Weeks 13-15</h3>
+        <div class="tab1">
+            <form class="myform">
+                <p>fdf</p>
+            </form>
+        </div>
+
+        </form>
+
+    </div>
+
+
+
+</body>
+
+</html>
+
+
+
+</body>
+
+</html>

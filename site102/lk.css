@@ -1,0 +1,23 @@
+.col-sm-6 {
+min-height: 400px;
+
+}
+
+#ageOutput{
+    text-align: center;
+    vertical-align: middle;
+
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: white;
+    margin-top: 20px;
+    font-size: 52px;
+}
+#outputContainer{
+    margin-left: 50%;
+    margin-top: 25%;
+    vertical-align: middle;
+
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>site 104</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles\Bootstrap v4.2.1.css">
+  <link rel="stylesheet" href="styles\custom1.css">
+  <script src="script\jQuery v3.3.1.js"></script>
+  <script src="script\Bootstrap v4.2.1.js"></script>
+  <script src="script\custom1.js"></script>
+
+</head>
+
+
+
+<body>
+
+
+
+  <div class="container-fluid">
+    <p> site104 - input height and width for rectangle </p>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-6 bg-success">
+
+
+          <div class="input-group mb-3">
+
+            <input id="heightVal" type="number" max="200" class="form-control" placeholder="insert radios value"
+              aria-describedby="basic-addon1">
+          </div>
+
+
+          <input id="widthVal" type="number" max="200" class="form-control" placeholder="insert radios value"
+            aria-describedby="basic-addon1">
+
+
+
+
+
+
+          <div class="input-group">
+            <!-- show -->
+
+            <button type="button" onclick="showGo()" class="btn btn-primary btn-lg btn-block">showGo</button>
+
+
+            <!-- clear -->
+            <button type="button" onclick="clearCanvas()" class="btn btn-primary btn-lg btn-block">clear</button>
+          </div>
+
+
+        </div>
+
+        <div class="col-sm-9 col-md-6 ">
+
+
+          <canvas id="myCanvas" width="400" height="400" style="border:1px solid black;">
+            Your browser does not support the HTML5 canvas tag.</canvas>
+
+          <script>
+
+
+
+
+            function showGo() {
+              var heightVal = document.getElementById("heightVal").value;
+              var widthVal = document.getElementById("widthVal").value;
+              var c = document.getElementById("myCanvas");
+              var ctx = c.getContext("2d");
+              ctx.rect(20, 20, heightVal, widthVal);
+              ctx.stroke();
+              document.getElementById("myCanvas").innerText = radVal;
+              console.log("check");
+            }
+
+
+
+            function clearCanvas() {
+
+              // Use the identity matrix while clearing the canvas
+              var c = document.getElementById("myCanvas");
+              var ctx = c.getContext("2d");
+              ctx.beginPath();
+              ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
+
+              // Restore the transform
+              ctx.restore();
+            }
+
+
+
+            $("#radVal").on('keydown keyup', function (e) {
+              if ($(this).val() > 200
+                && e.keyCode !== 46 // keycode for delete
+                && e.keyCode !== 8 // keycode for backspace
+              ) {
+                e.preventDefault();
+                $(this).val(200);
+              }
+            });
+
+          </script>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>mivhan1</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles\Bootstrap v4.2.1.css">
+  <link rel="stylesheet" href="styles\custom1.css">
+  <script src="script\jQuery v3.3.1.js"></script>
+  <script src="script\Bootstrap v4.2.1.js"></script>
+
+
+</head>
+
+
+
+
+
+<body>
+
+  <div class="container-fluid">
+    <h2>Avraham Levin - ID: 302989496</h2>
+    <p>1.input radius value 
+      2.button to calculate volume and show
+       the circle display <br> 3. output of volume in numbers <br>
+      4.button clear canvas 5. prevent by alert only numbers input <br>
+    6.prevent by alert not value radius over  canvas size  </p>
+    <br>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-6 bg-success">
+          <div class="input-group">
+
+            <!-- insert radius -->
+
+            <div>
+              <form action="" method="post" id="MyForm">
+                <label for="radius"><strong>insert Radius value:</strong> </label>
+                <input type="text" name="radius" id="radius" class="btn btn-primary btn-lg btn-block" required>
+
+
+                <!-- calculate -->
+
+                <label for="volume"></label>
+                <input onclick="showGo()" type="submit" value="Calculate the volume" id="submit" method="post"
+                  class="btn btn-secondary btn-lg btn-block"> </form>
+
+              <br>
+              <label for="volume"><strong>the Volume of circle is:</strong> </label>
+
+              <input type="text" name="volume" id="volume" class="btn btn-primary btn-lg btn-block">
+
+
+              <br>
+              <!-- clear -->
+              <button type="button" onclick="clearCanvas()" class="btn btn-secondary btn-lg btn-block">clear</button>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-sm-9 col-md-6 ">
+
+
+          <canvas class="border1" id="myCanvas" width="400" height="400">
+            Your browser does not support the HTML5 canvas tag.</canvas>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="script\custom1.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Color & age</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles\Bootstrap v4.2.1.css">
+    <script src="script\jQuery v3.3.1.js"></script>
+    <script src="script\Bootstrap v4.2.1.js"></script>
+    <link rel="stylesheet" href="lk.css">
+
+    <script src="lk.js"></script>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6 ">
+                    <h2>The select Element</h2>
+                    <p>The select which figure you want to drow:</p>
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label><input type="checkbox" value="" id="colorCheck" onclick="showInput()"> --- To choose
+                                color press here</label>
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox" value="" id="ageCheck" onclick="showInput()"> --- To insert
+                                your age press here</label>
+                        </div>
+
+                    </div>
+                    <div class="form-group" id="colorInputGroup" style="display:none">
+                        <label for="pwd">What is your favorite color?</label>
+                        <input type="color" class="form-control" id="color" onchange="showBtn()">
+                    </div>
+                    <div class="form-group" id="ageInputGroup" style="display:none">
+                        <label for="">Please insert your age (from 1 to 120)</label>
+                        <input type="number" class="form-control" onchange="showBtn()" id="age" min="1" max="120">
+                    </div>
+                    
+                    <div class="form-group" id="btnGroup" style="display:none">
+                        <button type="button" class="btn btn-primary" onclick="output()">GO</button>
+                    </div>
+                </div>
+                <div class="col-sm-6 " id="colorOutput">
+                    <div id="outputContainer">
+                        <span id="ageOutput"></span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

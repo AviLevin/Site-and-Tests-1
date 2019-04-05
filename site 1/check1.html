@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>check1</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  <script src="script\myFunc.js"></script>
+</head>
+
+
+
+
+<p> insert picture botton to add gallery + option opening every picture <br>
+  in floating window with close inside botton
+</p>
+
+<div class="container-fluid">
+  <div class="row">
+
+      <!-- -------------------------- -->
+
+
+
+
+      <!-- Button trigger modal -->
+<button id="myModalLaunch" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        Launch demo modal
+      </button>
+
+
+      
+      <div class="row">
+            <div class="col">
+              <img class="img-fluid" src="https://www.w3schools.com/bootstrap4/newyork.jpg" alt="a" data-toggle="modal"
+                data-target="#myModal">
+            </div>
+  
+            <div class="col">
+              <img class="img-fluid" src="https://www.w3schools.com/bootstrap4/sanfran.jpg" alt="b" data-toggle="modal"
+                data-target="#myModal">
+            </div>
+  
+      
+  
+      
+      <!-- Modal -->
+      <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalTitle" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h4 id="myModalTitle" class="modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body">
+              <img src="" alt=""   id="bigDisplay">
+            </div>
+            <div class="modal-footer">
+              <button id="myModalClose" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      
+
+              
+      <!-- ------------- ------------------------>
+
+    </div>
+
+
+  </div>
+</div>
+
+
+<br>
+<br>
+
+
+
+</div>
+</div>
+
+
+
+</body>
+
+</html>

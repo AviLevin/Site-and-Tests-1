@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>site 103</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles\Bootstrap v4.2.1.css">
+  <link rel="stylesheet" href="styles\custom1.css">
+  <script src="script\jQuery v3.3.1.js"></script>
+  <script src="script\Bootstrap v4.2.1.js"></script>
+  <script src="script\custom1.js"></script>
+
+</head>
+
+<body>
+  
+
+
+
+
+  <p id="demo"></p>
+<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+<canvas id="canvas" width="800" height="800" style="cursor:crosshair"></canvas>
+<br />
+<STRONG>Choose your drawing shape</STRONG>:
+<input type="radio" name="shape" onclick="square = true" checked="checked">Square
+<input type="radio" name="shape" onclick="square = false">Circle
+<br />
+<STRONG>Color Settings</STRONG>:
+<input type="color" id="myColor">
+<button onclick="myFunction()">OK</button>
+<br />Basic Colours:
+<br />
+<form id="colorForm">
+  <input type="radio" name="color" value="black" checked="checked">Black
+  <input type="radio" name="color" value="red">Red
+  <input type="radio" name="color" value="orange">Orange
+  <input type="radio" name="color" value="yellow">Yellow
+  <input type="radio" name="color" value="green">Green
+  <input type="radio" name="color" value="blue">Blue
+  <input type="radio" name="color" value="purple">Purple
+  <input type="radio" name="color" value="white">Eraser (White)
+</form>
+<form id="sizeForm">
+  <br />
+  <STRONG>Size</STRONG>:
+  <input type="radio" name="size" value="10">Big
+  <input type="radio" name="size" value="5" checked="checked">Normal
+  <input type="radio" name="size" value="2">Small
+</form>
+<br />
+<button onclick="clearCanvas()">Clear Drawing</button>
+
+
+
+
+
+
+
+
+
+
+<script>var square = true
+
+  function myFunction() {
+    var x = document.getElementById("myColor").value;
+    ctx.fillStyle = x;
+  };
+  
+  var canvas = document.getElementById("canvas");
+  var ctx = canvas.getContext("2d");
+  var size = 5
+  var eraserSize = 5;
+  $('#colorForm input').on('change', function() {
+    ctx.fillStyle = $(this).val();
+  });
+  
+  $('#sizeForm input').on('change', function() {
+    size = $(this).val();
+  });
+  
+  function drawRect(event) {
+    var posX = event.pageX - $("#canvas").offset().left - 4
+    var posY = event.pageY - $("#canvas").offset().top - 4
+    ctx.fillRect(posX, posY, size, size)
+  }
+  
+  function drawCircle(event) {
+    var posX = event.pageX - $("#canvas").offset().left
+    var posY = event.pageY - $("#canvas").offset().top
+    ctx.beginPath();
+    ctx.arc(posX, posY, size - 1, 0, Math.PI / 2, false);
+    ctx.closePath();
+    ctx.fill();
+  }
+  
+  function check() {
+    if (square === true) {
+      $("html").mousedown(function() {
+        $("html").mousemove(function(event) {
+          drawRect(event);
+        })
+        $("html").click(function(event) {
+          drawRect(event);
+        })
+      })
+  
+      $("html").mouseup(function() {
+        $("html").off("mousemove")
+      })
+    }
+    if (square === false) {
+      $("html").mousedown(function() {
+        $("html").mousemove(function(event) {
+          drawCircle(event);
+        })
+        $("html").click(function(event) {
+          drawCircle(event);
+        })
+      })
+  
+      $("html").mouseup(function() {
+        $("html").off("mousemove")
+      })
+    }
+  }
+  
+  function clearCanvas() {
+    if (confirm("Are you sure you want to clear your drawing?") == true) {
+      ctx.clearRect(0, 0, 800, 800)
+    }
+  }
+  
+  setInterval(function() {
+    check();
+  }, 1)</script>
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
