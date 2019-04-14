@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <h1>Responsive Columns</h1>
+        <p>Resize the browser window to see the effect.</p>
+        <p>The columns will automatically stack on top of each other when the screen is less than 576px wide.</p>
+        <div class="row">
+            <div data-toggle="modal" data-target="#myModal" class="col-sm-3" data-id="11111"><img
+                    src="https://www.w3schools.com/bootstrap4/paris.jpg" class="rounded"
+                    alt="Cinque Terre">
+            </div>
+            <div data-toggle="modal" data-target="#myModal" class="col-sm-3" data-id="222222"><img
+                    src="https://www.w3schools.com/bootstrap4/paris.jpg"  class="rounded"
+                    alt="Cinque Terre">
+            </div>
+            <div data-toggle="modal" data-target="#myModal" class="col-sm-3" data-id="333333"><img
+                    src="https://www.w3schools.com/bootstrap4/paris.jpg"  class="rounded"
+                    alt="Cinque Terre">
+            </div>
+            <div data-toggle="modal" data-target="#myModal" class="col-sm-3" data-id="44444"><img
+                    src="https://www.w3schools.com/bootstrap4/paris.jpg"  class="rounded"
+                    alt="Cinque Terre">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Modal Heading</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                        <iframe id="noamlist" width="100%" height="315" src="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+
+
+<script>
+
+//triggered when modal is about to be shown
+$('#myModal').on('show.bs.modal', function(e) {
+
+//get data-id attribute of the clicked element
+var bookId = $(e.relatedTarget).data('id');
+
+$("#noamlist").attr("src", $("#noamlist").attr("src" ) + bookId)
+
+//populate the textbox
+});
+
+
+
+</script>
+</body>
+
+</html>

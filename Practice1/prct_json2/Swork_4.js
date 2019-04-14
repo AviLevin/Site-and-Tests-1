@@ -69,9 +69,6 @@ $(document).ready(function () {
         $("body").on("click", ".deleterow", function () {
             // $(this).parent().parent().remove();     
             $(this).parents("tr").remove();
-            fetch('https://jsonplaceholder.typicode.com/users', {
-  method: 'DELETE'
-})
             // console.log($(this))
         });
 
