@@ -27,18 +27,18 @@
      
 
       
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-          <ul class="nav nav-tabs mr-auto mt-2 mt-lg-0 ">
-            <li class="nav-item    ">
-              <a class="nav-link active myTabs "  data-toggle="tab" href="#home">Home</a>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <ul class="nav nav-tabs mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
             </li>
-            <li class="nav-item btn-outline ">
-              <a class="nav-link myTabs" data-toggle="tab" href="#graf" onclick="graf()"
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#graf" onclick="graf()"
                 >Live report</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link myTabs"  data-toggle="tab" href="#about">About us</a>
+              <a class="nav-link" data-toggle="tab" href="#about">About us</a>
             </li>
           </ul>
           <form class="form-inline">
@@ -48,16 +48,14 @@
               placeholder="Search"
               aria-label="Search"
             />
-            <button class="btn btn-outline-dark text-white my-2 my-sm-0" type="submit">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
               Search
             </button>
           </form>
         </nav>
 
-
         <div class="parallax"></div>
 
-        
         <!-- Tab panes -->
         <div class="tab-content">
           <div class="tab-pane container active" id="home">
@@ -68,9 +66,6 @@
           <div class="tab-pane container fade" id="graf">
             <div id="chartContainer" style="height: 500px; width: 100%;">
               GRAF
-
-              <br><br>
-
             </div>
           </div>
           <div class="tab-pane container fade col-sm-6" id="about">
@@ -80,8 +75,6 @@
                   <p>   The site provides up to date information on all currency types.
                      The site allows you to compare the types of currencies graphically and up to date. </p>
                     <img class="img-fluid" src="images\prof1.jpg" alt="Chania" width="200" height="200">
-                    <br><br>
-                    <br><br>
                 </div>
           </div>
         </div>
@@ -121,14 +114,6 @@
           </div>
         </div>
       </div>
-
-
-      <div class="footer bg-primary">
-        <p>© 2019 Copyright: Avraham Levin</p>
-      </div>
-
-      
-
 </body>
 
 </html>

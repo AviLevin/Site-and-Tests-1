@@ -1,4 +1,3 @@
-
 function getCoinAjax2(coinId, createTime) {
   $.ajax({
     url: "https://api.coingecko.com/api/v3/coins/" + coinId,
@@ -27,8 +26,6 @@ function getCoinAjax2(coinId, createTime) {
     }
   });
 }
-
-
 
 function getCoinAjax3(coinsSpecial) {
   var multiUrl = "https://min-api.cryptocompare.com/data/pricemulti?fsyms="; //&tsyms=USD";
@@ -88,8 +85,6 @@ function CheckAndSaveToLocal(coinId) {
   }
 }
 
-
-
 function checkIsInLocal(coinId) {
   if (coinsArray.length == 0) {
     return false;
@@ -114,7 +109,6 @@ function checkIsInLocal(coinId) {
   }
 }
 
-
 function saveCoinsToLocal() {
   if (localStorage !== undefined) {
     localStorage.setItem("coinsArray", JSON.stringify(coinsArray));
@@ -123,7 +117,6 @@ function saveCoinsToLocal() {
   }
 }
 
-
 function getCoinsFromLocal() {
   if (localStorage !== undefined) {
     coinsArray = JSON.parse(localStorage.getItem("coinsArray"));
@@ -131,7 +124,6 @@ function getCoinsFromLocal() {
     // Sorry! No Web Storage support..
   }
 }
-
 
 function graf() {
   console.log(coinsSpecial);
@@ -235,8 +227,6 @@ function graf() {
     ]
   };
   $("#chartContainer").CanvasJSChart(options);
-
-  
 
   function toggleDataSeries(e) {
     if (typeof e.dataSeries.visible === "undefined" || e.dataSeries.visible) {

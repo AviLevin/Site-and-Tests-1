@@ -1,3 +1,5 @@
+
+
 var coinsArray = [];
 var coinsSpecial = [];
 var allCoins = [];
@@ -36,7 +38,7 @@ $(document).ready(function() {
         };
         allCoins.push(coinItem);
 
-        $("#output").append(`
+        $("#landArea").append(`
                     <div class="card col-sm-6 col-md-4 col-lg-3 col-xl-2">
                     <div class="card-header">
                     <div class="row">
@@ -202,3 +204,5 @@ $(document).ready(function() {
     }
   });
 }); //end
+
+console.log("custom1 - hello");

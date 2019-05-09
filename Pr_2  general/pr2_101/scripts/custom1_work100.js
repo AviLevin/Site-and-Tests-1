@@ -1,3 +1,5 @@
+
+
 var coinsArray = [];
 var coinsSpecial = [];
 var allCoins = [];
@@ -10,6 +12,7 @@ function saveCoinsToLocal() {
   }
 }
 
+
 function getCoinsFromLocal() {
   if (localStorage !== undefined) {
     coinsArray = JSON.parse(localStorage.getItem("coinsArray"));
@@ -18,6 +21,8 @@ function getCoinsFromLocal() {
   }
 }
 
+
+
 $(document).ready(function() {
   console.log(allCoins);
 
@@ -25,7 +30,7 @@ $(document).ready(function() {
     url: "https://api.coingecko.com/api/v3/coins/list",
     type: "GET",
     success: function(response) {
-      for (let index = 0; index < 100; index++) {
+      for (let index = 0; index < 12; index++) {
         let coinItem = {
           id: response[index].id,
           symbol: response[index].symbol,
@@ -33,7 +38,7 @@ $(document).ready(function() {
         };
         allCoins.push(coinItem);
 
-        $("#output").append(`
+        $("#landArea").append(`
                     <div class="card col-sm-6 col-md-4 col-lg-3 col-xl-2">
                     <div class="card-header">
                     <div class="row">
@@ -63,10 +68,30 @@ $(document).ready(function() {
                     </div>
                     `);
       }
+
+
+
+
+
+      //   ====================================================
+    //   ====================================================
+
+
+
+
+
+
+
+
+
+
+
+
       // console.log(allCoins);
 
       $(".chkToggle").bootstrapToggle();
       $(".moreInfo").hide("slow");
+
 
       $(".moreInfoBtn").on("click", function() {
         $(this).text(function(i, text) {
@@ -74,6 +99,8 @@ $(document).ready(function() {
             ? ".....less info"
             : "More info.....";
         });
+
+
 
         var createTime = Date.now();
         var coinId = $(this).attr("data-id");
@@ -102,6 +129,7 @@ $(document).ready(function() {
         var coinSpecialId = $(this).attr("data-group");
         console.log(coinSpecialId);
 
+        
         // console.log(coinsSpecial);
         if (coinsSpecial.length < 5 && $(this).is(":checked")) {
           coinsSpecial.push(coinSpecialId);
@@ -171,6 +199,10 @@ $(document).ready(function() {
           return false;
         }
       });
+
+      
     }
   });
 }); //end
+
+console.log("custom1 - hello");
