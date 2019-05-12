@@ -173,4 +173,28 @@ $(document).ready(function() {
       });
     }
   });
+
+
+
+    // search filters!!//
+
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#output .card").filter(function() {
+      $(this).toggle($(this).html().toLowerCase().indexOf(value) > -1)
+    });
+  });
+
+
+
+
+
+  
 }); //end
+
+
+// ==========================//
+
+
+
+

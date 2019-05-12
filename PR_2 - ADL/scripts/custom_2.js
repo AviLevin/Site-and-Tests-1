@@ -35,32 +35,7 @@ function getCoinAjax3(coinsSpecial) {
   multiUrl += "&tsyms=USD";
   console.log(multiUrl);
 
-  //   $.ajax({
-  //     url: "https://api.coingecko.com/api/v3/coins/" + coinId,
-  //     type: "GET",
-  //     success: function(responseCoin) {
-  //       coinItem = {
-  //         id: coinId,
-  //         usd: responseCoin.market_data.current_price.usd,
-  //         eur: responseCoin.market_data.current_price.eur,
-  //         ils: responseCoin.market_data.current_price.ils,
-  //         time: createTime,
-  //         imgSrc: responseCoin.image.small
-  //       };
 
-  //       CheckAndSaveToLocal(coinId);
-
-  //       $("#" + coinId).html(`
-  //                   <div class="card">
-  //                   <img src="${responseCoin.image.small}" alt="">
-  //                   <ul>Price another valute
-  //                       <li>UDS:${responseCoin.market_data.current_price.usd}</li>
-  //                       <li>EUR:${responseCoin.market_data.current_price.eur}</li>
-  //                       <li>ILS:${responseCoin.market_data.current_price.ils}</li>
-  //                   </ul>
-  //                   </div>`);
-  //     }
-  //   });
 }
 
 function CheckAndSaveToLocal(coinId) {
@@ -124,6 +99,10 @@ function getCoinsFromLocal() {
     // Sorry! No Web Storage support..
   }
 }
+
+
+//       graph    //
+
 
 function graf() {
   console.log(coinsSpecial);
