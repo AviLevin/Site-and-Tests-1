@@ -1,5 +1,3 @@
-
-
 function getCoinAjax2(coinId, createTime) {
   $.ajax({
     url: "https://api.coingecko.com/api/v3/coins/" + coinId,

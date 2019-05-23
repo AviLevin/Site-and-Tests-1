@@ -7,15 +7,9 @@ span {
   overflow: visible;
   /* background-color:rgb(233, 228, 184); */
   border-color: #87afeb;
-  border-width: 2px;
-  border-bottom-color: #2196f3;
-  border-bottom-width: medium;
 }
 .moreInfo {
   color: gray;
-  position: bottom;
-  
-
 }
 #wait {
   display: none;
@@ -27,20 +21,9 @@ right: 10px;
 } */
 
 .card-header {
-  /* display: inline-flex; 
-    /* width: 100%;  */
-    /* background-color: red;
-    margin: center;
-    position: absolute; */
+  /* display: inline-flex; */
+   /* width: 100%;  */
    
-   
-}
-
-
-div.card-header {
-background-color: rgb(255, 255, 255);
-
-
 }
 .delete-coin {
   float: right;
@@ -51,8 +34,7 @@ background-color: rgb(255, 255, 255);
   display: inline-block;
   width: 50px;
   height: 30px;
-  float:right;
-  margin-right: -25px;
+  float: right;
 }
 
 /* Hide default HTML checkbox */
@@ -60,7 +42,6 @@ background-color: rgb(255, 255, 255);
   opacity: 0;
   width: 0;
   height: 0;
-  
 }
 
 /* The slider */
@@ -144,55 +125,3 @@ input:checked + .slider:before {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  height: 25px;
-}
-
-
-.myTabs {
-
-  background-color: rgb(255, 255, 255);
-  border-radius: 3px;
-  margin: 3px;
-  border-style: solid;
-  -webkit-text-stroke-width: 1px;
-
-
-}
-
-/* 
-================================== */
-
-.loader {
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid #3498db;
-  width: 120px;
-  height: 120px;
-  -webkit-animation: spin 5s linear infinite; /* Safari */
-  animation: spin 5s linear infinite;
-  position: center;
-  margin-left: 30%;
-}
-
-/* Safari */
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* 
-============================== */
-

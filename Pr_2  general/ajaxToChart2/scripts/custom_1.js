@@ -37,6 +37,8 @@ $(document).ready(function() {
 
 
   
+// loader and progress bar//
+  
 $(document).ajaxStart(function(){
   $('.loader').css("display", "block");
 });
