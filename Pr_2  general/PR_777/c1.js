@@ -53,7 +53,7 @@ $(document).ajaxComplete(function(){
     url: "https://api.coingecko.com/api/v3/coins/list",
     type: "GET",
     success: function(response) {
-      for (let index = 0; index < 30; index++) {
+      for (let index = 0; index < 14; index++) {
         let coinItem = {
           id: response[index].id,
           symbol: response[index].symbol,

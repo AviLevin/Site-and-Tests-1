@@ -1,14 +1,6 @@
-var coinsArray = [];
-var coinsSpecial = [];
-var allCoins = [];
-
-
-
-
-
-
-
-
+var coinsArray1 = [];
+var coinsSpecial1= [];
+var allCoins1 = [];
 
 
 
@@ -16,9 +8,9 @@ var allCoins = [];
 
 
 
-function saveCoinsToLocal() {
+function saveCoinsToLocal1() {
   if (localStorage !== undefined) {
-    localStorage.setItem("coinsArray", JSON.stringify(coinsArray));
+    localStorage.setItem("coinsArray1", JSON.stringify(coinsArray1));
   } else {
     // Sorry! No Web Storage support..
   }
@@ -26,14 +18,14 @@ function saveCoinsToLocal() {
 
 function getCoinsFromLocal() {
   if (localStorage !== undefined) {
-    coinsArray = JSON.parse(localStorage.getItem("coinsArray"));
+    coinsArray1 = JSON.parse(localStorage.getItem("coinsArray1"));
   } else {
-    // Sorry! No Web Storage support..
+
   }
 }
 
 $(document).ready(function() {
-  console.log(allCoins);
+  console.log(allCoins1);
 
 
   
@@ -53,13 +45,13 @@ $(document).ajaxComplete(function(){
     url: "https://api.coingecko.com/api/v3/coins/list",
     type: "GET",
     success: function(response) {
-      for (let index = 0; index < 30; index++) {
+      for (let index = 0; index < 14; index++) {
         let coinItem = {
           id: response[index].id,
           symbol: response[index].symbol,
           name: response[index].name
         };
-        allCoins.push(coinItem);
+        allCoins1.push(coinItem);
 
         $("#output").append(`
                     <div class="card col-sm-6 col-md-4 col-lg-3 col-xl-2">
@@ -91,7 +83,7 @@ $(document).ajaxComplete(function(){
                     </div>
                     `);
       }
-      // console.log(allCoins);
+
 
       $(".chkToggle").bootstrapToggle();
       $(".moreInfo").hide("slow");
@@ -105,7 +97,7 @@ $(document).ajaxComplete(function(){
 
         var createTime = Date.now();
         var coinId = $(this).attr("data-id");
-        // console.log(coinId);
+      
 
         $(".moreInfo").hide(1000);
         $(this)
@@ -127,36 +119,35 @@ $(document).ajaxComplete(function(){
       });
 
       $(".toggle-group").on("click", function() {
-        var coinSpecialId = $(this).attr("data-group");
-        console.log(coinSpecialId);
+        var coinSpecialId1 = $(this).attr("data-group");
+        console.log(coinSpecialId1);
 
         // console.log(coinsSpecial);
-        if (coinsSpecial.length < 5 && $(this).is(":checked")) {
-          coinsSpecial.push(coinSpecialId);
-          console.log(coinsSpecial);
-        } else if (coinsSpecial.length <= 5 && !$(this).is(":checked")) {
-          for (var i = 0; i < coinsSpecial.length; i++) {
-            if (coinsSpecial[i] === coinSpecialId) {
-              coinsSpecial.splice(i, 1);
-              console.log(coinsSpecial);
+        if (coinsSpecial1.length < 5 && $(this).is(":checked")) {
+          coinsSpecial1.push(coinSpecialId1);
+          console.log(coinsSpecial1);
+        } else if (coinsSpecial1.length <= 5 && !$(this).is(":checked")) {
+          for (var i = 0; i < coinsSpecial1.length; i++) {
+            if (coinsSpecial1[i] === coinSpecialId1 ){
+              coinsSpecial1.splice(i, 1);
+              console.log(coinsSpecial1);
             }
           }
-        } else if (coinsSpecial.length >= 5 && $(this).is(":checked")) {
-          // alert("wow it is 5");
+        } else if (coinsSpecial1.length >= 5 && $(this).is(":checked")) {
+       
           $(".modal-body").html("");
-          for (let index = 0; index < coinsSpecial.length; index++) {
-            // $('.modal-body').append(`<p>${coinsSpecial[index]}<button class="btn btn-warning delete-coin">Delete</button></p>
-            // `);
+          for (let index = 0; index < coinsSpecial1.length; index++) {
+           
             $(".modal-body").append(`<div class="row">
                         <div class=" col-sm-9">
-                      <span class="modal-item">${coinsSpecial[index]}</span> 
+                      <span class="modal-item">${coinsSpecial1[index]}</span> 
                       </div> 
                       <div class=" col-sm-3">
                       
                       <label class="switch">
                      <input type="checkbox" checked class="delete-coin" data-id="${
-                       coinsSpecial[index]
-                     }" data-group="${coinsSpecial[index]}">
+                       coinsSpecial1[index]
+                     }" data-group="${coinsSpecial1[index]}">
                      <span class="slider round"></span>
                         </label></div>
                         </div>
@@ -167,10 +158,10 @@ $(document).ajaxComplete(function(){
               let coinSpecialIdDelete = $(this).attr("data-id");
 
               if (!$(this).is(":checked")) {
-                for (var i = 0; i < coinsSpecial.length; i++) {
-                  if (coinsSpecial[i] === coinSpecialIdDelete) {
-                    coinsSpecial.splice(i, 1);
-                    console.log(coinsSpecial);
+                for (var i = 0; i < coinsSpecial1.length; i++) {
+                  if (coinsSpecial1[i] === coinSpecialIdDelete) {
+                    coinsSpecial1.splice(i, 1);
+                    console.log(coinsSpecial1);
                     $(
                       'input[type="checkbox"][data-group="' +
                         coinSpecialIdDelete +
@@ -178,18 +169,18 @@ $(document).ajaxComplete(function(){
                     ).prop("checked", false);
                   }
                 }
-              } else if ($(this).is(":checked") && coinsSpecial.length < 5) {
+              } else if ($(this).is(":checked") && coinsSpecial1.length < 5) {
                 if (
-                  coinsSpecial[coinsSpecial.length - 1] !== coinSpecialIdDelete
+                  coinsSpecial1[coinsSpecial1.length - 1] !== coinSpecialIdDelete
                 ) {
-                  coinsSpecial.push(coinSpecialIdDelete);
+                  coinsSpecial1.push(coinSpecialIdDelete);
                   $(
                     'input[type="checkbox"][data-group="' +
                       coinSpecialIdDelete +
                       '"]'
                   ).prop("checked", true);
 
-                  console.log(coinsSpecial);
+                  console.log(coinsSpecial1);
                 }
               }
             });
