@@ -43,8 +43,8 @@ app.get("/speak/:animal", function (req, res) {
 
 
 
-  app.get('/', function (req, res) {
-    res.send('Hello World! ddsdds dsdsdds')
+  app.get('*', function (req, res) {
+    res.send('sory 0n 404')
   })    
 
 
