@@ -3,6 +3,7 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
+
 $(document).ready(function(){
   $("#all").click(function(){
     $.get("http://localhost:3000/api/v1/posts", function(data, status){
@@ -17,6 +18,8 @@ $(document).ready(function(){
     });
   });
 
+
+
   $("#single").click(function(){
     $.get("http://localhost:3000/api/v1/posts/2", function(data, status){
       console.log("Data: " + data + "\nStatus: " + status);
@@ -25,6 +28,9 @@ $(document).ready(function(){
 	  document.getElementById("demo").innerHTML = output;
     });
   });
+
+
+  
   $("#edit").click(function(){
     $.get("http://localhost:3000/api/v1/posts/2", function(data, status){
       console.log("Data: " + data + "\nStatus: " + status);
