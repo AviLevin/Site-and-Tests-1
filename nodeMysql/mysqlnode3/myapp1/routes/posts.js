@@ -1,35 +1,33 @@
 var express = require('express');
 var router = express.Router();
+var postsController = require('../controllers/posts');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express home' });
+
+/* GET all posts page. */
+router.get('/', postsController.getAll);
+
+
+
+/* GET single post. */
+router.get('/:id', postsController.getSingle);
+
+//   /* GET delete post form. */
+// router.get('/:id/del', function(req, res, next) {
+//     res.render('index', { title: 'Express fff' });
+//   });
+
+
+/* GET add post for inserting. */
+router.get('/add', function (req, res, next) {
+    res.render('posts/add', { title: 'Add' });
 });
+  router.post('/add', postsController.insertPost);
 
 
-/* GET single post . */
-router.get('/:id', function(req, res, next) {
-    res.render('index', { title: 'Express ' });
-  });
 
-
-  /* GET delete post form. */
-router.get('/:id/del', function(req, res, next) {
-    res.render('index', { title: 'Express fff' });
-  });
-
-
-  /* GET edit post - update. */
-router.get('/:id/edit', function(req, res, next) {
-    res.render('index', { title: 'Express fff' });
-  });
-
-
-  /* GET add post - update. */
-router.get('/add', function(req, res, next) {
-    res.render('index', { title: 'add' });
-  });
-
+/* GET edit post for updating. */
+router.get('/:id/edit', postsController.getSingleEdit);
+router.put('/:id/edit', postsController.updatePost);
 
 
 

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#all").click(function(){
+    $.get("http://localhost:3000/api/v1/posts", function(data, status){
+      console.log("Data: " + data + "\nStatus: " + status);
+	  posts = JSON.parse(data)
+	  output ="";
+	  for(let i = 0 ; i <posts.length; i++) {
+		output += `<h1>${posts[i].title}</h1><p>${posts[i].body}</p>`;
+	  }
+	  document.getElementById("demo").innerHTML = output;
+
+    });
+  });
+
+  $("#single").click(function(){
+    $.get("http://localhost:3000/api/v1/posts/2", function(data, status){
+      console.log("Data: " + data + "\nStatus: " + status);
+	  post = data;
+	  output = `<h1>${post.title}</h1><p>${post.body}</p>`;
+	  document.getElementById("demo").innerHTML = output;
+    });
+  });
+  $("#edit").click(function(){
+    $.get("http://localhost:3000/api/v1/posts/2", function(data, status){
+      console.log("Data: " + data + "\nStatus: " + status);
+	  post = data;
+	  output = `<form action="http://localhost:3000/api/v1/posts" method="POST">Title: <input name="title" value="${post.title}" /><br>Body: <input name="body" value="${post.body}" /><input type="submit" value="send"></form>`;
+	  document.getElementById("demo").innerHTML = output;
+    });
+  });
+
+  });
+</script>
+</head>
+<body>
+
+<button id="all">Send an HTTP GET request to a page and get the result back</button>
+<button id="single">Send an HTTP GET request to a page and get the result back</button>
+<button id="edit">Send an HTTP GET request to a page and get the result back</button>
+<p id="demo">Let AJAX change this text.</p>
+
+</body>
+</html>
