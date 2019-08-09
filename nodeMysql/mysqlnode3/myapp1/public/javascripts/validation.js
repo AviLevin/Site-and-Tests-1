@@ -5,7 +5,7 @@ $(document).ready(function () {
     })
 
     $("#editForm").on("submit", function (e) {
-        alert("edit");
+        alert("edit is edited");
         // e.preventDefault();
     })
 
